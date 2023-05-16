@@ -11,7 +11,7 @@ const VideoCard = ({info,maxlength}) => {
 
 
   return (
-    <div className="m-4 p-2 w-72 shadow-md">
+    <div className="w-80 shadow-md m-3">
          <img className="rounded-md w-80" src={thumbnails.medium.url}/>
 
          <ul>

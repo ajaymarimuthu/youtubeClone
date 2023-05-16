@@ -13,7 +13,10 @@ const ButtonList = () => {
     return <Button name={btn} key={idx}/>
   })
   return (
-    <div className="flex flex-wrap justify-between">
+    <div className="flex flex-wrap justify-between items-center">
+
+
+      <button className="border-2 bg-black text-white h-10 w-12 rounded-lg" >All</button>
 
       {buttons}
 

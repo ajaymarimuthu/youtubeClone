@@ -31,7 +31,7 @@ const VideoContainer = () => {
 
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap justify-center items-center mt-5">
 
         
       {videos?.map((video,idx)=>{
