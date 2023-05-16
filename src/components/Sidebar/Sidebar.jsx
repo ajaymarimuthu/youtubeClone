@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
 
  
-    <div className="p-5 col-span-1 scroll-my-10 ">
+    <div className="p-6 col-span-1 scroll-my-10 ">
        <ul>
         <li className="p-2 m-2 flex justify-start items-center">   <img className="h-6 mr-6 " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAB7CAMAAABjGQ9NAAAAYFBMVEX///8AAAD8/Pw0NDRqamoFBQXl5eUnJyeYmJjz8/OUlJSJiYmkpKTq6urX19eNjY1GRkZSUlIvLy87OzsWFhaBgYG+vr6srKzNzc0aGhoODg5vb2+zs7N6enphYWFZWVkUzWP8AAABg0lEQVRoge3ZbW+CMBiFYU7ZQFRQEfEV9///5Ui2ZFCQAn1aYnburzW5EtKmLwYBY4wxxhhjjDH2JiXlZpsuQ6cHANdyCTrDT2v/dHn7tbFTnukz/rr7xXdoto880ne0O2a+5OSAThc/dLbv0sDDCx330cDKPV32y3WV6+m+fUkDz8QpvRqg67XmEFf62tLLnU335MtAA4UjPDoa6bqzCzorxtD11iJPlyNpYCO91oYneLuD6HRX6wl0vbVInqSqSTQQi+1rac++ZUroGBfNoIXWWnYzQ32d7OnX+5apyna6n83Gyyz3tWlrSy+3OUOerGggnI9fLOn6s8+2hw4pI3tLe8lvvuRcC9TjOHrb7nSNK9t7mtrMgQuhs9POTHWSuiIl0+lYiA5UPtn+ELND2v/bvq2iZpfOS4RDu9J+kXm09feNSH8HoU2bNm3atGm/n32XsrsXE6Mt9y9pql8OTPZT8Dk3OhWfjbDVx0M0RvO17Euyajc8LCozxhhjjDHGGBPuGw0xFR3Q0AOnAAAAAElFTkSuQmCC" alt="home-icon"   />   Home</li>
         <li className="p-1 m-2 flex justify-start items-center">   <img className="h-6 mr-6 " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC56YvgN8x2hv6lVkMtTasrIFXE2zB4gWYzQ&usqp=CAU" alt="home-icon"   />   Shorts</li>
