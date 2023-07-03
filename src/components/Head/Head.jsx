@@ -1,16 +1,20 @@
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { toggelMenu } from "../../utils/appSlice";
 import { Link, BrowserRouter } from "react-router-dom";
 import { YOUTUBE_SEARCH_API } from "../../utils/constants";
 import { useEffect } from "react";
+import { cacheResults } from "../../utils/searchSlice";
+ 
 
 const Head = () => {
 
     const [search, setsearch] = useState("")
     const [suggestion, setSuggestion] = useState([]);
     const [showSuggestion, setShowSuggestion] = useState(false);
+    const searchCache=useSelector(store=>store.search)
+    console.log(searchCache);
 
     const dispatch = useDispatch();
 
@@ -20,16 +24,7 @@ const Head = () => {
         dispatch(toggelMenu())
     }
 
-    const getSearchSuggestion = async () => {
-
-        const data = await fetch(YOUTUBE_SEARCH_API + search);
-        const json = await data.json();
-
-        setSuggestion(json[1])
-
-        // console.log(json[1]);
-
-    }
+ 
 
     const handleFocus = () => {
         setShowSuggestion(true)
@@ -39,17 +34,35 @@ const Head = () => {
         setShowSuggestion(false)
     }
 
+
+    const getSearchSuggestion = async () => {
+        const data = await fetch(YOUTUBE_SEARCH_API + search);
+        const json = await data.json();
+        setSuggestion(json[1])
+
+        // --- updating in cache --
+        dispatch(cacheResults({
+            [search] : json[1],
+        }))
+    }
+
     useEffect(() => {
 
         const timer = setTimeout(() => {
-            getSearchSuggestion()
+            if(searchCache[search]){
+                setSuggestion(searchCache[search])
+            }
+            else{
+                getSearchSuggestion()
+            }
+    
         }, 200);
 
         return () => {
-            clearInterval(timer);
+            clearTimeout(timer);
         }
 
-    }, [search])
+    },[search])
 
 
 
