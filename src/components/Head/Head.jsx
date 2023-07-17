@@ -86,6 +86,7 @@ const Head = () => {
                         <button className="border-2 h-8 rounded-r-full px-3"><img className="h-8" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ1DQ3CsVs5UQQFkRCi_T2LzJe3aFOPJzrpkRv7lZXUdU3TjPCL" alt="search-icon" /></button>
                     </div>
 
+
                     <div className="fixed bg-white py-2 px-5 w-[36rem] shadow-md rounded-md">
                         {showSuggestion &&
                             <ul>
